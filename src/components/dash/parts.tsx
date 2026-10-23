@@ -11,7 +11,7 @@ export function StatCard({ icon: Icon, label, value, hint, tone = "accent" }: {
 }) {
   const tones = {
     accent: "bg-accent-soft text-accent",
-    warning: "bg-warning-soft text-warning-foreground",
+    warning: "bg-warning-soft text-foreground",
     primary: "bg-secondary text-primary",
     destructive: "bg-destructive/10 text-destructive",
   } as const;
@@ -54,8 +54,8 @@ export function Empty({ text, children }: { text: string; children?: ReactNode }
 const STATUS_TONE: Record<string, string> = {
   approved: "bg-accent-soft text-accent", active: "bg-accent-soft text-accent", verified: "bg-accent-soft text-accent",
   accepted: "bg-accent-soft text-accent", completed: "bg-secondary text-primary", resolved: "bg-accent-soft text-accent",
-  pending: "bg-warning-soft text-warning-foreground", shared: "bg-warning-soft text-warning-foreground", open: "bg-warning-soft text-warning-foreground",
-  reviewing: "bg-warning-soft text-warning-foreground", draft: "bg-muted text-muted-foreground", not_verified: "bg-muted text-muted-foreground",
+  pending: "bg-warning-soft text-foreground", shared: "bg-warning-soft text-foreground", open: "bg-warning-soft text-foreground",
+  reviewing: "bg-warning-soft text-foreground", draft: "bg-muted text-muted-foreground", not_verified: "bg-muted text-muted-foreground",
   rejected: "bg-destructive/10 text-destructive", declined: "bg-destructive/10 text-destructive", cancelled: "bg-muted text-muted-foreground",
   suspended: "bg-destructive/10 text-destructive", failed: "bg-destructive/10 text-destructive", dismissed: "bg-muted text-muted-foreground",
   hidden: "bg-destructive/10 text-destructive",

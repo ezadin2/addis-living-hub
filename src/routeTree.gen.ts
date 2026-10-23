@@ -16,6 +16,8 @@ import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as ListPropertyRouteImport } from './routes/list-property'
+import { Route as OwnerRouteImport } from './routes/owner'
+import { Route as RenterRouteImport } from './routes/renter'
 import { Route as SafetyRouteImport } from './routes/safety'
 import { Route as SigninRouteImport } from './routes/signin'
 import { Route as VerifyRouteImport } from './routes/verify'
@@ -57,6 +59,16 @@ const ListPropertyRoute = ListPropertyRouteImport.update({
   path: '/list-property',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OwnerRoute = OwnerRouteImport.update({
+  id: '/owner',
+  path: '/owner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RenterRoute = RenterRouteImport.update({
+  id: '/renter',
+  path: '/renter',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SafetyRoute = SafetyRouteImport.update({
   id: '/safety',
   path: '/safety',
@@ -91,6 +103,8 @@ export interface FileRoutesByFullPath {
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/list-property': typeof ListPropertyRoute
+  '/owner': typeof OwnerRoute
+  '/renter': typeof RenterRoute
   '/safety': typeof SafetyRoute
   '/signin': typeof SigninRoute
   '/verify': typeof VerifyRoute
@@ -105,6 +119,8 @@ export interface FileRoutesByTo {
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/list-property': typeof ListPropertyRoute
+  '/owner': typeof OwnerRoute
+  '/renter': typeof RenterRoute
   '/safety': typeof SafetyRoute
   '/signin': typeof SigninRoute
   '/verify': typeof VerifyRoute
@@ -120,6 +136,8 @@ export interface FileRoutesById {
   '/how-it-works': typeof HowItWorksRoute
   '/legal': typeof LegalRoute
   '/list-property': typeof ListPropertyRoute
+  '/owner': typeof OwnerRoute
+  '/renter': typeof RenterRoute
   '/safety': typeof SafetyRoute
   '/signin': typeof SigninRoute
   '/verify': typeof VerifyRoute
@@ -136,6 +154,8 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/legal'
     | '/list-property'
+    | '/owner'
+    | '/renter'
     | '/safety'
     | '/signin'
     | '/verify'
@@ -150,6 +170,8 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/legal'
     | '/list-property'
+    | '/owner'
+    | '/renter'
     | '/safety'
     | '/signin'
     | '/verify'
@@ -164,6 +186,8 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/legal'
     | '/list-property'
+    | '/owner'
+    | '/renter'
     | '/safety'
     | '/signin'
     | '/verify'
@@ -179,6 +203,8 @@ export interface RootRouteChildren {
   HowItWorksRoute: typeof HowItWorksRoute
   LegalRoute: typeof LegalRoute
   ListPropertyRoute: typeof ListPropertyRoute
+  OwnerRoute: typeof OwnerRoute
+  RenterRoute: typeof RenterRoute
   SafetyRoute: typeof SafetyRoute
   SigninRoute: typeof SigninRoute
   VerifyRoute: typeof VerifyRoute
@@ -237,6 +263,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ListPropertyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/owner': {
+      id: '/owner'
+      path: '/owner'
+      fullPath: '/owner'
+      preLoaderRoute: typeof OwnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/renter': {
+      id: '/renter'
+      path: '/renter'
+      fullPath: '/renter'
+      preLoaderRoute: typeof RenterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/safety': {
       id: '/safety'
       path: '/safety'
@@ -283,6 +323,8 @@ const rootRouteChildren: RootRouteChildren = {
   HowItWorksRoute: HowItWorksRoute,
   LegalRoute: LegalRoute,
   ListPropertyRoute: ListPropertyRoute,
+  OwnerRoute: OwnerRoute,
+  RenterRoute: RenterRoute,
   SafetyRoute: SafetyRoute,
   SigninRoute: SigninRoute,
   VerifyRoute: VerifyRoute,
